@@ -13,6 +13,6 @@ namespace WebApplication3.Models
         public String Country { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public int SOmeProperty { get; set; }
+      
     }
 }
