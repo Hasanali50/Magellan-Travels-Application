@@ -21,14 +21,15 @@ namespace WebApplication3.Models
             return userIdentity;
         }
     }
-
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("ApplicationDbContext")
         {
+            
         }
-        public DbSet<Car> Cars { get; set; }
+        
         public DbSet<Location> Locations { get; set; }
         public static ApplicationDbContext Create()
         {
