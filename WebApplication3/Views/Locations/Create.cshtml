@@ -5,7 +5,7 @@
 @using FluentBootstrap;
 
 <h2>Create new Location</h2>
-
+<h4>@ViewBag.Message</h4>
 @using (var form = Html.Bootstrap().Form().Begin())
 {
     @form.Input("Name", "Enter Location Name")

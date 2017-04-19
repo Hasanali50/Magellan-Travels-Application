@@ -22,6 +22,7 @@ namespace WebApplication3.Controllers
             newPackage.Description = Package.Description;
             newPackage.Cap = Package.Cap;
             newPackage.Amount = Package.Amount;
+            ViewBag.Message = "Your package has been created";
             return View();
         }
     }
