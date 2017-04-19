@@ -24,7 +24,7 @@ namespace WebApplication3
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/darkly.min.css",
                       "~/Content/site.css"));
         }
     }
