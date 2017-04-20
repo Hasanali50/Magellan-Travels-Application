@@ -81,8 +81,7 @@ namespace WebApplication3.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [RegularExpression("")]
-        public string CNID { get; set; }
+       
     }
 
     public class ResetPasswordViewModel

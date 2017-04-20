@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,15 +15,12 @@ namespace WebApplication3.Controllers
         public ActionResult Create() { return View(); }
 
         [HttpPost]
-        public ActionResult Create(CreateLocationsViewModel model)
+        public ActionResult Create(LocationsViewModel model)
         {
             var location = new Location();
-            location.Name = model.Name;
-            location.City = model.Name;
-            location.Country = model.Country;
-            location.Latitude = model.Latitude;
-            location.Longitude = model.Longitude;
-            var db = new ApplicationDbContext();
+            location.LocationName = model.LocationName;
+            location.City = model.City;
+            var db = HttpContext.GetOwinContext().Get<ApplicationDbContext>();
             db.Locations.Add(location);
             db.SaveChanges();
             return View();
