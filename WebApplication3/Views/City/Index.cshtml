@@ -3,33 +3,34 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = null;
 }
 
 <h2>Index</h2>
 
 
-@using (var table = Html.Bootstrap().Table().Begin())
+
+
+
+@foreach (var city in Model)
+
 {
-    @table.TableHeaderRow("City", "Delete", "Edit")
+    //   using (var row = table.TableRow().Begin())
+    //  {
+    <h1>@city.CityName</h1>
+    @Html.Bootstrap().LinkButton(actionName: "Delete", controllerName: "City", text: "Delete", routeValues: new { Id = city.CityName });
+    @Html.Bootstrap().LinkButton(actionName: "Modify", controllerName: "City", text: "Modify", routeValues: new { Id = city.CityName });
+    // using (var tableData = row.TableData().Begin())
+    //{
+
+    //}
+    //using (var tableData = row.TableData().Begin())
+    //{
+
+    //}
+    // }
 
 
-    @foreach (var city in Model)
-
-    {
-        using (var row = table.TableRow().Begin())
-        {
-            @row.TableData(city.CityName)
-            using (var tableData = row.TableData().Begin())
-            {
-                Html.Bootstrap().LinkButton(actionName: "Delete", controllerName: "City", text: "Delete", routeValues: new { Id = city.CityName });
-            }
-            using (var tableData = row.TableData().Begin())
-            {
-                Html.Bootstrap().LinkButton(actionName: "Modify", controllerName: "City", text: "Modify", routeValues: new { Id = city.CityName });
-            }
-        }
-
-    }
 
 
 }

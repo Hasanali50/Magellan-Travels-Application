@@ -25,5 +25,12 @@ namespace WebApplication3.Controllers
             db.SaveChanges();
             return View();
         }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+
     }
 }

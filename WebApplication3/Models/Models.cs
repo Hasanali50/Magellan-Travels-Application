@@ -13,6 +13,7 @@ namespace WebApplication3.Models
             Locations = new HashSet<Location>();
         }
         [Key]
+        [Required]
         public String CityName { get; set; }
         public ICollection<Location> Locations { get; set; }
     }

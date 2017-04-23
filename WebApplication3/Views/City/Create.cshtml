@@ -9,5 +9,8 @@
 @using (var form = Html.Bootstrap().Form().Begin())
 {
     @form.Input("CityName", "City")
-        @form.Submit()
+    @form.Submit()
 }
+<div class="container">
+    @{ Html.RenderAction(actionName: "Index", controllerName: "City");}
+</div> 
