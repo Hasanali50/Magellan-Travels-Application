@@ -21,7 +21,7 @@ namespace WebApplication3.Controllers
             var db = Globals.GetDatabase();
             var city = new City();
             city.CityName = Globals.ToCamelCase(model.CityName);
-            if (!db.Cities.Any(c => c.CityName == city.CityName ))
+            if (!db.Cities.Any(c => c.CityName == city.CityName))
             {
                 db.Cities.Add(city);
                 db.SaveChanges();
@@ -37,8 +37,31 @@ namespace WebApplication3.Controllers
         // GET: City
         public ActionResult Index()
         {
+            var cities = Globals.GetDatabase().Cities.ToList();
+            return View(cities);
+        }
 
+        public ActionResult Delete(string id)
+        {
+            var db = Globals.GetDatabase();
+            var city = new City();
+            city.CityName = id;
+            if (db.Cities.Any(c => c.CityName == city.CityName))
+            {
+                db.Cities.Remove(city);
+                db.SaveChanges();
+                ViewBag.Message = "City Successfully Removed.";
+                return View();
+            }
             return View();
         }
+
+        public ActionResult Modify(string id)
+        {
+            return RedirectTo(MOdif);
+        }
+         
     }
+
+}
 }
