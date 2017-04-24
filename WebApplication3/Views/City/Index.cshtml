@@ -1,0 +1,36 @@
+﻿@using FluentBootstrap
+@model IEnumerable<WebApplication3.Models.City>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+
+<h2>Index</h2>
+
+
+
+
+
+@foreach (var city in Model)
+
+{
+    //   using (var row = table.TableRow().Begin())
+    //  {
+    <h1>@city.CityName</h1>
+    @Html.Bootstrap().LinkButton(actionName: "Delete", controllerName: "City", text: "Delete", routeValues: new { Id = city.CityName });
+    @Html.Bootstrap().LinkButton(actionName: "Modify", controllerName: "City", text: "Modify", routeValues: new { Id = city.CityName });
+    // using (var tableData = row.TableData().Begin())
+    //{
+
+    //}
+    //using (var tableData = row.TableData().Begin())
+    //{
+
+    //}
+    // }
+
+
+
+
+}

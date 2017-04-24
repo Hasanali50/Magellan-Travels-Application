@@ -1,0 +1,16 @@
+﻿@using FluentBootstrap
+@model WebApplication3.Models.City
+@{
+    ViewBag.Title = "Modify";
+    var cityID = Model.CityName;
+}
+
+<h2>Modify</h2>
+
+<h3>Editing @Model.CityName</h3>
+
+@using (var form = Html.Bootstrap().Form(actionName: "Modify", controllerName: "City", routeValues: new { Id = cityID}).Begin())
+{
+    @form.Input("CityName", "Editied Name")
+    @form.Submit()
+}

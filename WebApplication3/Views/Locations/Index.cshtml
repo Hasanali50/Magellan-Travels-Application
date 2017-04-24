@@ -1,0 +1,15 @@
+﻿@using FluentBootstrap
+@model IEnumerable<WebApplication3.Models.Location>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var loc in Model) {
+
+    @loc.LocationName
+
+}
+
