@@ -6086,6 +6086,7 @@ a.badge:focus {
     }
 
     .jumbotron p {
+        
         margin-bottom: 15px;
         font-size: 23px;
         font-weight: 200;
@@ -6101,6 +6102,8 @@ a.badge:focus {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+
 
 .jumbotron .container {
     max-width: 100%;

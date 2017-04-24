@@ -9,7 +9,7 @@ namespace WebApplication3.Models
     public class ApplicationUser : IdentityUser
     {
         public string CNIC { get; set; }
-        public string FIrstName { get; set; }
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

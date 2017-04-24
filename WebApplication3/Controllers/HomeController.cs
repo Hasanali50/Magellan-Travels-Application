@@ -25,9 +25,18 @@ namespace WebApplication3.Controllers
         // }
         public ActionResult Index()
         {
+            List<SelectListItem> ObjItem = new List<SelectListItem>()
+            {
+                new SelectListItem{Text="Select", Value= "0", Selected=true},
+                new SelectListItem{Text="Murre", Value= "1"},
+                new SelectListItem{Text="Kashmir", Value= "2"},
+                new SelectListItem{Text="Lahore", Value= "3"},
+                new SelectListItem{Text="Kaghan", Value= "4"},
+            };
+            ViewBag.ListItem = ObjItem;
             return View();
         }
-
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -35,7 +44,13 @@ namespace WebApplication3.Controllers
             return View();
         }
 
-        [Authorize]
+        public ActionResult Gallery()
+        {
+            ViewBag.Message = "Welcome to the gallery";
+
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

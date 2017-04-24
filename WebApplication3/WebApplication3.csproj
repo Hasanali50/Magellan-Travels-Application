@@ -290,10 +290,12 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Packages\Create.cshtml" />
-    <Content Include="Views\City\Create.cshtml" />
+    <Content Include="Content\Create.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Home\City\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
