@@ -1,15 +1,16 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
+@using FluentBootstrap;
 <div class="jumbotron">
- 
+
     <h1>MAGELLAN TRAVELS</h1>
     <p class="lead">Want to go somewhere? Don't worry, we will plan for you! We, at Magellan Travels, provide holiday solutions, planning trips for you to exquisite places.</p>
     <p>Choose your destination!</p>
-    <p >From: @Html.DropDownList("ListItem")</p>
-
+    <p>Your Destination: @Html.DropDownList(name: "ListItem", selectList: null, htmlAttributes: new { @class = "form-control" })</p>
+    @Html.Bootstrap().Submit("Submit")
     
+    <p></p>
 
     <p><a href="https://www.facebook.com/magellantravelspk/" class="btn btn-primary btn-lg">Visit our Facebook page! &raquo;</a></p>
 </div>
@@ -22,14 +23,10 @@
         </p>
         <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Gallery</h2>
-        <p>Visit our gallery to see our past experiences!</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
+    
     <div class="col-md-4">
         <h2>Leave a review.</h2>
         <p>You can submit a review here regarding your trip and tell us how it was! :)</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <p><a class="btn btn-default" href="@Url.Action("Review", "HomeController")">Review &raquo;</a></p>
     </div>
 </div>

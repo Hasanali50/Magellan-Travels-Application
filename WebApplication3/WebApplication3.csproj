@@ -295,10 +295,11 @@
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Packages\Create.cshtml" />
     <Content Include="Views\City\Create.cshtml" />
+    <Content Include="Views\Packages\Booking.cshtml" />
+    <Content Include="Views\Home\Review.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Home\City\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

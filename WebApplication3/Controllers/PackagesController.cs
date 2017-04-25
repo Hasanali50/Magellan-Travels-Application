@@ -25,5 +25,8 @@ namespace WebApplication3.Controllers
         //    ViewBag.Message = "Your package has been created";
         //    return View();
         //}
+
+        
+        public ActionResult Booking() { return View(); }
     }
 }

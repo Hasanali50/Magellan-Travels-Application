@@ -57,5 +57,12 @@ namespace WebApplication3.Controllers
 
             return View();
         }
+
+        public ActionResult Review()
+        {
+            ViewBag.Message = "Leave us a review. :)";
+
+            return View();
+        }
     }
 }
