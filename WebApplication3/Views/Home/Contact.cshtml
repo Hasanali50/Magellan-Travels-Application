@@ -1,6 +1,10 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
+
+@using Jmelosegui.Mvc.GoogleMap
+
+
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
@@ -15,6 +19,7 @@
 
 <address>
     <strong>For Queries:</strong> <a href="mailto:magellantravels@example.com">magellantravels@example.com</a>
+
 </address>
 
 @using (var form = Html.Bootstrap().Form().Begin())
@@ -35,3 +40,25 @@
     }
 </style></div>
 <script type='text/javascript'>function init_map() { var myOptions = { zoom: 10, center: new google.maps.LatLng(24.9413316, 67.11385500000006), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(24.9413316, 67.11385500000006) }); infowindow = new google.maps.InfoWindow({ content: '<strong>Magellan Travels</strong><br>IBA Main Campus, Karachi, Pakistan<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+
+
+
+@*<style>
+        #gmap_canvas img {
+            max-width: none !important;
+            background: none !important
+        }
+    </style></div>
+    <script type='text/javascript'>function init_map() { var myOptions = { zoom: 10, center: new google.maps.LatLng(24.9413316, 67.11385500000006), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(24.9413316, 67.11385500000006) }); infowindow = new google.maps.InfoWindow({ content: '<strong>Magellan Travels</strong><br>IBA Main Campus, Karachi, Pakistan<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
+    @(
+            Html.GoogleMap()
+                .Name("map")
+                .Height(500)
+                .Markers(m => m.Add().Title("Hello World!"))
+    )
+
+    @section scripts
+        {
+        @(Html.GoogleMap().ScriptRegistrar())
+    }*@
