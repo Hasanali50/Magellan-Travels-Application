@@ -4,6 +4,8 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
+@using FluentBootstrap;
+
 <address>
     One Microsoft Way<br />
     Redmond, WA 98052-6399<br />
@@ -15,3 +17,13 @@
     <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
 </address>
+
+@using (var form = Html.Bootstrap().Form().Begin())
+{
+    <h4>Feedback</h4>
+    @form.Input("FeedbackName", "Name: ")
+    @form.Input("FeedbackEmail", "Email: ")
+    @form.TextArea("FeedbackDesc", "Feedback:", rows: 5)
+
+    @form.Submit()
+}
