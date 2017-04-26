@@ -10,34 +10,15 @@
         <div class="carousel-inner">
             <div class="item active">
                 <img src="http://lorempixel.com/400/200/sports/1/Dummy-Text/">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Magellan Travels</h1>
-                        <p class="lead">Want to go somewhere? Don't worry, we will plan for you! We, at Magellan Travels, provide holiday solutions, planning trips for you to exquisite places.</p>
-                        <a class="btn btn-large btn-primary" href="#">Sign up today</a>
-                    </div>
-                </div>
+               
             </div>
             <div class="item">
                 <img src="http://lorempixel.com/400/200/sports/" alt="">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Magellan Travels</h1>
-                        <p class="lead">Want to go somewhere? Don't worry, we will plan for you! We, at Magellan Travels, provide holiday solutions, planning trips for you to exquisite places.</p>
-                        <a class="btn btn-large btn-primary" href="#">Sign up today</a>
-                    </div>
-                </div>
+               
             </div>
             <div class="item">
                 <img src="http://lorempixel.com/400/200/sports/Dummy-Text/" alt="">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Magellan Travels</h1>
-                        <p class="lead">Want to go somewhere? Don't worry, we will plan for you! We, at Magellan Travels, provide holiday solutions, planning trips for you to exquisite places.</p>
-                        <a class="btn btn-large btn-primary" href="#">Sign up today</a>
-
-                    </div>
-                </div>
+               
             </div>
         </div>
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
@@ -88,6 +69,9 @@
     <div class="col-md-4">
         <h2>Leave a review.</h2>
         <p>You can submit a review here regarding your trip and tell us how it was! :)</p>
-        <p><a class="btn btn-default" href="@Url.Action("Review", "HomeController")">Review &raquo;</a></p>
+        
+        @Html.Bootstrap().LinkButton(actionName: "Review", controllerName: "Home", text: "Review")
+        
+
     </div>
 </div>
