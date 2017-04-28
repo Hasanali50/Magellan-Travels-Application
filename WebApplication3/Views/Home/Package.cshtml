@@ -1,0 +1,19 @@
+﻿@using FluentBootstrap
+@model IEnumerable <WebApplication3.Models.Package>
+@{
+    ViewBag.Title = "Package";
+}
+
+<h2>Package</h2>
+
+@foreach(var package in Model)
+{
+    <div class="card" stysle="width: 20rem;">
+        <img class="card-img-top" src="@package.PicturePath" alt="Card image cap">
+        <div class="card-block">
+            <h4 class="card-title">@package.PackageName</h4> <!--Package Title e.g. Kashmir Trip-->
+            <p class="card-text">@package.Description</p> <!--Package Desc-->
+            <a href="#" class="btn btn-primary">Book Now</a><!--Booking k View k taraf le kar jayega.-->
+        </div>
+    </div>
+}

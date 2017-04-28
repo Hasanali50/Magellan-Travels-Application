@@ -10,6 +10,9 @@ namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
+
+
+
         //public ActionResult RegisterCar() { return View(); }
 
         //[HttpPost]
@@ -23,6 +26,12 @@ namespace WebApplication3.Controllers
 
 
         // }
+
+        public ActionResult Package() {
+            var packagelist = Globals.GetDatabase().Packages.ToList();
+            return View(packagelist);
+
+        }
         public ActionResult Index()
         {
             List<SelectListItem> ObjItem = new List<SelectListItem>()
@@ -36,25 +45,44 @@ namespace WebApplication3.Controllers
             ViewBag.ListItem = ObjItem;
             return View();
         }
-        
+
         public ActionResult About()
         {
             return View();
         }
 
-        public ActionResult Gallery()
-        {
-            ViewBag.Message = "Welcome to the gallery";
-
-            return View();
-        }
-
+  
         public ActionResult Contact()
         {
             ViewBag.Message = "Contact page.";
 
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Contact(FeedBackViewModel model)
+        {
+            var db = Globals.GetDatabase();
+            var newFeedBack = new FeedBack();
+            newFeedBack.FeedBackName = model.FeedBackName;
+            newFeedBack.FeedBackEmail = model.FeedBackEmail;
+            newFeedBack.FeedBackDesc = model.FeedBackDesc;
+            if (newFeedBack.FeedBackName != null && newFeedBack.FeedBackEmail != null && newFeedBack.FeedBackDesc != null)
+            {
+                db.Feedbacks.Add(newFeedBack);
+                db.SaveChanges();
+            }
+            else
+                ModelState.AddModelError("NewFeedBack", "Please Enter All The Details");
+            return View();
+        }
+
+        public ActionResult Gallery()
+        {
+            var Pictures = Globals.GetDatabase().Gallery.ToList();
+            return View(Pictures);
+        }
+
 
         public ActionResult Review()
         {
