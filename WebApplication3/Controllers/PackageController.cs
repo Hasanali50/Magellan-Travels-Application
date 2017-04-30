@@ -10,11 +10,12 @@ namespace WebApplication3.Controllers
 {
     public class PackageController : Controller
     {
-        //GET : New Packages
+        [Authorize(Roles = "Administrator")]
         public ActionResult Index() {
             return View();
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public ActionResult Index(PackageViewModel model)
         {
