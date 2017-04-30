@@ -10,7 +10,9 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+    position: absolute;
+    background-image: url('http://www.solidbackgrounds.com/images/1680x1050/1680x1050-teal-solid-color-background.jpg');
+    margin: 0;
 }
 article,
 aside,
@@ -4960,11 +4962,15 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #eee;
+    background-image: url(http://www.planwallpaper.com/static/images/Light-Wood-Background-Wallpaper.jpg);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee;
 }
 .jumbotron h1,
 .jumbotron .h1 {
