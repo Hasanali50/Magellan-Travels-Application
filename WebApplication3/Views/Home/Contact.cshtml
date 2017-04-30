@@ -21,45 +21,27 @@
     <strong>For Queries:</strong> <a href="mailto:magellantravels@example.com">magellantravels@example.com</a>
 
 </address>
-@Html.ValidationSummary()
-@using (var form = Html.Bootstrap().Form().Begin())
-{
-    <h4>Feedback</h4>
-    @form.Input("FeedbackName", "Name: ")
-    @form.Input("FeedbackEmail", "Email: ")
-    @form.TextArea("FeedbackDesc", "Feedback:", rows: 5)
 
-    @form.Submit()
-}
-@*
-<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:440px;width:700px;'><div id='gmap_canvas' style='height:440px;width:700px;'></div><div><small><a href="http://embedgooglemaps.com">embed google maps</a></small></div><div><small><a href="https://ultimatewebtraffic.com/">buy targeted traffic</a></small></div>
-<style>
-    #gmap_canvas img {
-        max-width: none !important;
-        background: none !important
-    }
-</style></div>
-<script type='text/javascript'>function init_map() { var myOptions = { zoom: 10, center: new google.maps.LatLng(24.9413316, 67.11385500000006), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(24.9413316, 67.11385500000006) }); infowindow = new google.maps.InfoWindow({ content: '<strong>Magellan Travels</strong><br>IBA Main Campus, Karachi, Pakistan<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
-
-*@
-
-
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.7280823223396!2d67.11166631447415!3d24.94133158401584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338bcd01921f5%3A0x5fd98736c5530784!2sInstitute+of+Business+Administration+Karachi+Main+Campus!5e0!3m2!1sen!2s!4v1493376892371" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-@*<style>
-        #gmap_canvas img {
-            max-width: none !important;
-            background: none !important
-        }
-    </style></div>
-    <script type='text/javascript'>function init_map() { var myOptions = { zoom: 10, center: new google.maps.LatLng(24.9413316, 67.11385500000006), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(24.9413316, 67.11385500000006) }); infowindow = new google.maps.InfoWindow({ content: '<strong>Magellan Travels</strong><br>IBA Main Campus, Karachi, Pakistan<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
-    @(
-            Html.GoogleMap()
-                .Name("map")
-                .Height(500)
-                .Markers(m => m.Add().Title("Hello World!"))
-    )
-
-    @section scripts
+<div class="row">
+    <div class="col-md-5">
+        @Html.ValidationSummary()
+        @using (var form = Html.Bootstrap().Form().Begin())
         {
-        @(Html.GoogleMap().ScriptRegistrar())
-    }*@
+            <h4>Feedback</h4>
+            @form.Input("FeedbackName", "Name: ")
+            @form.Input("FeedbackEmail", "Email: ")
+            @form.TextArea("FeedbackDesc", "Feedback:", rows: 5)
+
+            @form.Submit()
+        }
+
+
+    </div>
+
+    <div class="col-md-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.7280823223396!2d67.11166631447415!3d24.94133158401584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb338bcd01921f5%3A0x5fd98736c5530784!2sInstitute+of+Business+Administration+Karachi+Main+Campus!5e0!3m2!1sen!2s!4v1493376892371" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+</div>
+
+
+    
