@@ -149,6 +149,10 @@ textarea {
     margin: 0;
 }
 
+allign {
+    text-align: center
+}
+
 button {
     overflow: visible;
 }

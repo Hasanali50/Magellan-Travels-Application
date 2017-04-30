@@ -6,6 +6,23 @@ using System.Web;
 
 namespace WebApplication3.Models
 {
+    public class FeedBack
+    {
+        [Key]
+        public int FeedBackID { get; set; }
+        public string FeedBackName { get; set; }
+        [EmailAddress]
+        public string FeedBackEmail { get; set; }
+        public string FeedBackDesc { get; set; }
+    }
+
+    public class Gallery
+    {
+        public int ID { get; set; }
+        public string PicturePath { get; set; }
+        public string PictureDesc { get; set; }
+    }
+
     public class City
     {
         public City()
@@ -20,7 +37,8 @@ namespace WebApplication3.Models
 
     public class Location
     {
-        public Location() {
+        public Location()
+        {
             PackageLocations = new HashSet<PackageLocations>();
         }
 
@@ -32,7 +50,8 @@ namespace WebApplication3.Models
 
     public class Package
     {
-        public Package() {
+        public Package()
+        {
             PackageLocations = new HashSet<PackageLocations>();
         }
         public int PackageID { get; set; }
@@ -40,13 +59,14 @@ namespace WebApplication3.Models
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public String Description { get; set; }
-        public int cap { get; set; }
-        public int amount { get; set; }
-        public String picturepath { get; set; }
-        public ICollection<PackageLocations> PackageLocations { get; set; } 
+        public int Cap { get; set; }
+        public int Amount { get; set; }
+        public String PicturePath { get; set; }
+        public ICollection<PackageLocations> PackageLocations { get; set; }
     }
 
-    public class PackageLocations {
+    public class PackageLocations
+    {
         public int ID { get; set; }
         public Location LocationOfPackage { get; set; }
         public Package PackageBelongingTo { get; set; }
@@ -55,7 +75,7 @@ namespace WebApplication3.Models
 
     public class Customer : ApplicationUser
     {
-      
+
         public String CNIC { get; set; }
 
     }

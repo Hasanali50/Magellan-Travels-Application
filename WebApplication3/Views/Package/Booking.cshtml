@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Booking";
+}
+
+@using FluentBootstrap;
+
+@Html.Bootstrap().Heading2("Booking").SetAlignment(TextAlignment.Center)
+
+<h4>@ViewBag.Message</h4>
+@using (var form = Html.Bootstrap().Form().SetHorizontal(7).Begin())
+{
+    <br />
+    @form.Select("Packages", "Choose Package", "Package 1", "Package 2", "Package 3")
+    @form.Input("Passengers", "Number of Passengers")
+    @form.CheckBox("Check", "Method of Payment", "Cash")
+
+    <br />
+
+    @form.Submit("Book")
+}
+

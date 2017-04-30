@@ -21,60 +21,28 @@
                 </button>
                 @Html.ActionLink("Magellan Travels", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            @Html.Partial("_LoginPartial")
+            <ul class="nav navbar-nav col-lg-offset-2">
+
+                <li> <a href="/Home/Index"> Home </a></li>
+                <li> <a href="/Home/About"> About Us </a></li>
+                <li> <a href="/Home/Gallery"> Past Expriences </a></li>
+                <li> <a href="/Home/Package"> Our Packages </a></li>
+                <li> <a href="/Home/Contact"> Contact Us </a></li>      
+
+            </ul>            @Html.Partial("_LoginPartial")
         </div>
     </div>
-    <div class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    @{
+    <!--   <div class="navbar navbar-inverse navbar-static-top"> -->
 
 
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-
-                    }
-
-                    @{
-
-
-                        <li>@Html.ActionLink("Gallery", "Gallery", "Home")</li>
-
-
-                    }
-
-                    @{
-
-
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-
-
-                    }
-                    
-                </ul>
-
-            </div>
-        </div>
-    </div>
-
-   
-    
-
-
-
-
-
-
-
-
-            <div class="container body-content">
-                @RenderBody()
-                <hr />
+    <div class="container body-content">
+        
+        @RenderBody()
                 <footer>
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-                </footer>
-            </div>
+                    <hr />
+                    <p class="text-center">&copy; @DateTime.Now.Year - Magellan Travels All Rights Reserved.</p>
+        </footer>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -11,8 +11,8 @@ namespace WebApplication3.Models.ViewModels
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public String Description { get; set; }
-        public int cap { get; set; }
-        public int amount { get; set; }
-        public String picturepath { get; set; }
+        public int Cap { get; set; }
+        public int Amount { get; set; }
+        public String PicturePath { get; set; }
     }
 }
