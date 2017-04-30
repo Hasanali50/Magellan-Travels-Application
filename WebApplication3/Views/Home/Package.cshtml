@@ -8,51 +8,51 @@
 
 <br />
 
+<div class="card-group">
+    <div class="row">
+        @foreach (var package in Model)
+        {
 
-<div class="row">
-    @foreach (var package in Model)
-    {
+            <div class="card">
+                <img src="@package.PicturePath" alt="Avatar" style="width:10%">
+                <div class="container">
+                    <h4 class="card-title">@package.PackageName</h4> <!--Package Title e.g. Kashmir Trip-->
+                    <!-- Trigger the modal with a button -->
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Description</button>
 
-        <div class="card">
-            <img src="@package.PicturePath" alt="Avatar" style="width:10%">
-            <div class="container">
-                <h4 class="card-title">@package.PackageName</h4> <!--Package Title e.g. Kashmir Trip-->
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
 
-                <!-- Trigger the modal with a button -->
-                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Description</button>
-
-                <!-- Modal -->
-                <div id="myModal" class="modal fade" role="dialog">
-                    <div class="modal-dialog">
-
-                        <!-- Modal content-->
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">@package.PackageName</h4>
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">@package.PackageName</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>@package.Description</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="~/Package/Booking" class="btn btn-primary">Book Now</a><!--Booking k View k taraf le kar jayega.-->
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
                             </div>
-                            <div class="modal-body">
-                                <p>@package.Description</p>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="~/Package/Booking" class="btn btn-primary">Book Now</a><!--Booking k View k taraf le kar jayega.-->
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            </div>
+
                         </div>
-
                     </div>
+
+
+
+
+                    <p class="card-text">@package.Description</p> <!--Package Desc-->
+
                 </div>
-
-
-
-
-                <p class="card-text">@package.Description</p> <!--Package Desc-->
-                
             </div>
-        </div>
 
 
-    }
+        }
+    </div>
 </div>
 
 
