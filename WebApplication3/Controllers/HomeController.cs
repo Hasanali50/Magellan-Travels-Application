@@ -7,14 +7,24 @@ using WebApplication3.Models;
 using WebApplication3.Models.ViewModels;
 using System.Net;
 using System.Net.Mail;
-
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
 
+        /*    public ActionResult CreateAdmin()
+         {
 
+         // var manager = ApplicationUserManager();
+             string Email = "adminstrator@magellantravels.com";
+             string password = "magellantravels2015.";
+             var user = new ApplicationUser { UserName = Email, Email = Email };
+             IdentityResult i = ApplicationUserManager.Create(user, password);
+             return View(nameof(Index));
+         }*/
 
         //public ActionResult RegisterCar() { return View(); }
 
@@ -38,6 +48,7 @@ namespace WebApplication3.Controllers
         }
         public ActionResult Index()
         {
+
             List<SelectListItem> ObjItem = new List<SelectListItem>()
             {
                 new SelectListItem{Text="Select", Value= "0", Selected=true},
@@ -76,7 +87,7 @@ namespace WebApplication3.Controllers
                 string emailFrom = "magellantravels15@gmail.com";
                 string password = "magellantravels2015.";
                 string emailTo = "magellantravels15@gmail.com";
-                string subject = "Feedback from "+newFeedBack.FeedBackName+" having email "+newFeedBack.FeedBackEmail;
+                string subject = "Feedback from " + newFeedBack.FeedBackName + " having email " + newFeedBack.FeedBackEmail;
                 string body = newFeedBack.FeedBackDesc;
                 MailMessage mail = new MailMessage();
                 mail.From = new MailAddress(emailFrom);

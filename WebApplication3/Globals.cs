@@ -10,6 +10,7 @@ namespace WebApplication3
 {
     public static class Globals
     {
+
         public static ApplicationDbContext GetDatabase()
         {
             return HttpContext.Current.GetOwinContext().Get<ApplicationDbContext>();
