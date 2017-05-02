@@ -1,5 +1,6 @@
 ﻿@using FluentBootstrap
 @model IEnumerable <WebApplication3.Models.Package>
+    
 @{
     ViewBag.Title = "Package";
 }
@@ -9,54 +10,97 @@
 <br />
 
 
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            @{ var i = 0;
+                var modelId = "" + i;
+             }
+            @foreach (var package in Model)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6" style="margin:5px;text-align:center;">
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top" src="@package.PicturePath" alt="Card image" width="180px">
+                        <div class="card-block">
+                            <h4 class="card-title">@package.PackageName</h4>
+                            <p class="card-text">@package.Description</p>
+                           
 
-@foreach (var package in Model)
-{
+                            <!-- Trigger the modal with a button -->
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#@modelId">Description</button>
 
-    <div class="card" style="width: 20rem;">
+                            <!-- Modal -->
+                            <div id="@modelId" class="modal fade" role="dialog">
+                                @{
+                                    i++;
+                                    modelId = "myModal" + i;
+                                }
+                                <div class="modal-dialog">
 
-        <img src="@package.PicturePath" alt="Avatar" style="width:20%">
-        <div class="card-block">
-            <h4 class="card-title">@package.PackageName</h4> <!--Package Title e.g. Kashmir Trip-->
-            <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Description</button>
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">@package.PackageName</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>@package.Description</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="~/Package/Booking" class="btn btn-primary">Book Now</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
 
-            <!-- Modal -->
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
+                                </div>
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">@package.PackageName</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>@package.Description</p>
-                        </div>
-                        <div class="modal-footer">
-                            <a href="~/Package/Booking" class="btn btn-primary">Book Now</a><!--Booking k View k taraf le kar jayega.-->
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+
+
                         </div>
                     </div>
-
                 </div>
-            </div>
-            <p class="card-text">@package.Description</p> <!--Package Desc-->
 
+
+                <!--
+            <div class="col-lg-4 col-sm-6">
+                <div class="card" height="500px">
+                    <center>
+                        <div class="image">
+                            <img src="@package.PicturePath" alt="Avatar">
+                        </div>
+                        <div class="card-block">
+                            <h4 class="card-title">@package.PackageName</h4> <!--Package Title e.g. Kashmir Trip
+
+
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">@package.PackageName</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>@package.Description</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="~/Package/Booking" class="btn btn-primary">Book Now</a>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <p class="card-text">@package.Description</p>
+                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Description</button>
+
+                    </center>
+                </div>
+            </div>-->
+            }
         </div>
     </div>
-
-
-}
-
-
-
-<div class="card" style="width: 20rem;">
-    <img class="card-img-top" src="..." alt="Card image cap">
-    <div class="card-block">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+</div>
 </div>
