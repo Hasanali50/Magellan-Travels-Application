@@ -1,5 +1,4 @@
 ﻿@using FluentBootstrap
-
 @{
     ViewBag.Title = "Index";
 }
@@ -11,5 +10,6 @@
     @form.Input("PackageName", "Enter Package Name")
     @form.Input("PicturePath", "Enter Picture Link Here")
     @form.Input("Description", "Enter Description Here")
+    @*@form.Input("StartDate","Date",,inputType: FormInputType.DateTime).SetHelp("Enter Starting Date Here: ")*@
     @form.Submit()
 }
