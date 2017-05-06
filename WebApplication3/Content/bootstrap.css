@@ -11,8 +11,10 @@ html {
 }
 body {
     position: absolute;
-    background-image: url('http://7-themes.com/data_images/out/34/6885777-blurred.jpg');
+    background-color:black;
+    color: olive;
     margin: 0;
+
 }
 article,
 aside,
@@ -235,7 +237,9 @@ th {
     max-width: 100% !important;
   }
   p,
-  h2,
+  h2{
+      text-align: center;
+  }
   h3 {
     orphans: 3;
     widows: 3;
@@ -4962,14 +4966,14 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-    background-image: url(http://www.planwallpaper.com/static/images/Light-Wood-Background-Wallpaper.jpg);
+    background-image: url(https://il6.picdn.net/shutterstock/videos/10067360/thumb/1.jpg);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 30px;
     padding-bottom: 30px;
     margin-bottom: 30px;
-    color: inherit;
+    color: ivory;
     background-color: #eee;
 }
 .jumbotron h1,

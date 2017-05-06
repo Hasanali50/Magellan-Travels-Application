@@ -1,11 +1,13 @@
 ﻿@using FluentBootstrap
-@model IEnumerable <WebApplication3.Models.Package>
-    
-@{
-    ViewBag.Title = "Package";
-}
+@model IEnumerable<WebApplication3.Models.Package>
+<div id="wrapper" style="text-align: center">
+    @{
+        ViewBag.Title = "Package";
+        <h2>Package</h2>
+
+    }
+</div>
 <link rel="stylesheet" href="~/Content/card.css">
-<h2>Package</h2>
 
 <br />
 
@@ -15,7 +17,7 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
             @{ var i = 0;
                 var modelId = "" + i;
-             }
+            }
             @foreach (var package in Model)
             {
                 <div class="col-lg-3 col-md-4 col-sm-6" style="margin:5px;text-align:center;">
@@ -24,7 +26,7 @@
                         <div class="card-block">
                             <h4 class="card-title">@package.PackageName</h4>
                             <p class="card-text">@package.Description</p>
-                           
+
 
                             <!-- Trigger the modal with a button -->
                             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#@modelId">Description</button>
@@ -60,45 +62,6 @@
                         </div>
                     </div>
                 </div>
-
-
-                <!--
-            <div class="col-lg-4 col-sm-6">
-                <div class="card" height="500px">
-                    <center>
-                        <div class="image">
-                            <img src="@package.PicturePath" alt="Avatar">
-                        </div>
-                        <div class="card-block">
-                            <h4 class="card-title">@package.PackageName</h4> <!--Package Title e.g. Kashmir Trip
-
-
-                            <div id="myModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-
-
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">@package.PackageName</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p>@package.Description</p>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="~/Package/Booking" class="btn btn-primary">Book Now</a>
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <p class="card-text">@package.Description</p>
-                            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Description</button>
-
-                    </center>
-                </div>
-            </div>-->
             }
         </div>
     </div>

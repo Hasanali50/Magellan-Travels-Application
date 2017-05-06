@@ -1,10 +1,13 @@
 ﻿@using FluentBootstrap
 @model IEnumerable<WebApplication3.Models.Gallery>
-@{
-    ViewBag.Title = "Gallery";
-}
 
-<h2>Index</h2>
+<div id="wrapper" style="text-align: center">
+
+    @{
+        ViewBag.Title = "Gallery";
+    }
+</div>
+    <h2>Index</h2>
 
 
     @foreach (var pic in Model)

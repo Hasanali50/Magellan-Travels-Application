@@ -1,29 +1,31 @@
 ﻿
-@{
-    ViewBag.Title = "Review";
-}
-
-@using FluentBootstrap;
-
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-<br />
-
-@using (var form = Html.Bootstrap().Form().Begin())
-{
-    using (form.FormGroup().Begin())
-    {
-        @form.Radio("e", "Rate Us:    ", "Bad").SetInline()
-        @form.Radio("e", null, "Satisfactory").SetInline()
-        @form.Radio("e", null, "Good").SetInline()
-        @form.Radio("e", null, "Excellent").SetInline()
-
+    @{
+        ViewBag.Title = "Review";
     }
 
-    @form.TextArea("a", "Comment:", rows: 5)
+    @using FluentBootstrap;
+<div id="wrapper" style="text-align: center">
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+</div>
+    
+    <br />
 
-    @form.Submit()
-}
+    @using (var form = Html.Bootstrap().Form().Begin())
+    {
+        using (form.FormGroup().Begin())
+        {
+            @form.Radio("e", "Rate Us:    ", "Bad").SetInline()
+            @form.Radio("e", null, "Satisfactory").SetInline()
+            @form.Radio("e", null, "Good").SetInline()
+            @form.Radio("e", null, "Excellent").SetInline()
+
+        }
+
+        @form.TextArea("a", "Comment:", rows: 5)
+
+        @form.Submit()
+    }
 
 
 
