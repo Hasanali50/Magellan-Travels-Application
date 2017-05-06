@@ -19,6 +19,7 @@ namespace WebApplication3.Controllers
         [HttpPost]
         public ActionResult PhotoSave(GalleryViewModel model, HttpPostedFileBase file)
         {
+            var xy = new Gallery();
             var db = Globals.GetDatabase();
             var gallery = new Gallery();
             
