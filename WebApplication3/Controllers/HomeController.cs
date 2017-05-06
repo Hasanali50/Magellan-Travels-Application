@@ -39,13 +39,14 @@ namespace WebApplication3.Controllers
 
 
         // }
-
+        [AllowAnonymous]
         public ActionResult Package()
         {
             var packagelist = Globals.GetDatabase().Packages.ToList();
             return View(packagelist);
 
         }
+        [AllowAnonymous]
         public ActionResult Index()
         {
 
@@ -60,13 +61,13 @@ namespace WebApplication3.Controllers
             ViewBag.ListItem = ObjItem;
             return View();
         }
-
+        [AllowAnonymous]
         public ActionResult About()
         {
             return View();
         }
 
-
+        [AllowAnonymous]
         public ActionResult Contact()
         {
             ViewBag.Message = "Contact page.";
@@ -74,6 +75,7 @@ namespace WebApplication3.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Contact(FeedBackViewModel model)
         {
@@ -114,14 +116,14 @@ namespace WebApplication3.Controllers
 
 
         }
-
+        [AllowAnonymous]
         public ActionResult Gallery()
         {
             var Pictures = Globals.GetDatabase().Gallery.ToList();
             return View(Pictures);
         }
 
-
+        [AllowAnonymous]
         public ActionResult Review()
         {
             ViewBag.Message = "Leave us a review. :)";

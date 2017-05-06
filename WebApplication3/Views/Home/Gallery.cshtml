@@ -9,9 +9,10 @@
 </div>
     <h2>Index</h2>
 
-
+    
     @foreach (var pic in Model)
-    {   @pic.PicturePath;
+    {   <img src="@Url.Content(pic.PicturePath)" height="500" width="500"/>;
+        <hr />
         @pic.PictureDesc;
     }
 

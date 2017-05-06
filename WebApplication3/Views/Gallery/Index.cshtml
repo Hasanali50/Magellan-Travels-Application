@@ -1,7 +1,14 @@
-﻿s
+﻿@using FluentBootstrap
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+@using (var form = Html.Bootstrap().Form(controllerName: "Gallery",actionName:"PhotoSave", method: FormMethod.Post ).AddAttribute("enctype", "multipart/form-data").Begin())
+{
+    <input type="file" value="Upload Image" name="file" class="btn-primary"/>
+    @form.Input("PictureDesc", "Enter Description Here")
+    @form.Submit()
+}
